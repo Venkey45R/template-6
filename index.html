@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle with Text and Image</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+   <style>
+        body {
+background-color : #FFE9eC;
+margin : 0;
+font-family : Arial, sans-serif;
+display : flex;
+flex-direction : column;
+align-items : center;
+justify-content : center;
+min-height : 100vh;
+overflow-x: hidden;
+}
+.rectangle {
+width : 100%;
+height : 69px;
+background-color : #AD88C6;
+display : flex;
+align-items : center;
+justify-content : center;
+font-family : 'Give You Glory', sans-serif;
+font-size : 24px;
+color : white;
+margin : 0;
+padding : 10px;
+box-sizing : border-box;
+}
+
+.text-box {
+width : 100%;
+max-width : 342px;
+height : 109px;
+background-color : transparent;
+position : relative;
+font-family : 'Give You Glory', sans-serif;
+font-size : 49px;
+font-weight : 400;
+color : #7469B6;
+text-align : center;
+margin-top : 200px;
+box-sizing : border-box;
+}
+
+.story-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.custom-btn{
+  padding: 5px 20px; 
+  background-color: #AD88C6; 
+  border: none;  
+  color: #FDE5E7; 
+  border-radius: 30px; 
+  position: relative; 
+  left: 110px;
+  top: -40px;
+}
+
+.story-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.story-item.left .story-image-1::after,
+.story-item.right .story-image-2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.story-item.left .story-image-1::after {
+    left: 130px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.story-item.right .story-image-2::after {
+    right: 130px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.image-box {
+width : 100%;
+max-width : 150px;
+top : 0px;
+height : auto;
+margin-top : 0px;
+text-align : center;
+}
+.image-box img {
+width : 100%;
+height : 350px;
+}
+.save-date-box {
+width : 180px;
+height : 50px;
+background-color : #E1AFD1;
+text-align : center;
+display : flex;
+align-items : center;
+justify-content : center;
+margin-top : 0;
+border-radius : 80px;
+border : #AD88C6 solid 5px;
+font-family : 'Give You Glory', sans-serif;
+font-size : 20px;
+font-weight : 400;
+color : #FDE5E7;
+z-index : 2;
+}
+.october-box {
+width : 100%;
+height : auto;
+background-color : #E1AFD1;
+padding : 30px 0;
+text-align : center;
+font-family : 'Give You Glory', sans-serif;
+margin-top : -30px;
+position : relative;
+z-index : 1;
+}
+.october-box h1 {
+font-size : 100px;
+color : #FDE5E7;
+margin-top: 70px;
+margin-bottom : 15px;
+}
+.october-box p {
+font-size : 24px;
+color : #FDE5E7;
+margin-bottom : 20px;
+}
+.october-box img {
+width : 400px;
+height : auto;
+position : absolute;
+top : 40%;
+left : 50%;
+transform : translate(-50%,-50%) rotate(270deg);
+z-index : 0;
+}
+.meet-bride-groom {
+line-height : 10;
+}
+
+.card {
+      height: auto;
+      width: 70%;
+      max-width: 100%;
+      border-radius: 50px;
+      border-color: rgba(0, 0, 0, 0.125);
+      background-color: #AD88C6C9;
+      top: -160px;
+      right: -100px;
+      font-family : 'Give You Glory', sans-serif;
+      z-index: 2;
+      padding: 5px;
+    }
+
+    .card-title {
+      font-size: 40px;
+      margin-bottom: 0.5rem;
+      color: #FDE5E7;
+    }
+
+
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 250px;
+      color: #FDE5E7;
+    }
+
+    .card-img-top {
+      height: auto;
+      border-radius: 50px;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .card {
+      height: auto;
+      width: 70%;
+      max-width: 100%;
+      border-radius: 0.5rem;
+      border-color: rgba(0, 0, 0, 0.125);
+      background-color: #DAAACF;
+      top: -100px;
+      right: -61.5px;
+      z-index: 2;
+    }
+
+    .custom-btn{
+      position: relative; 
+      left: 40px; 
+      top: -10px;
+    }
+ }
+
+ .owl-carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: #FFE9eC;
+}
+
+.owl-carousel .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  
+}
+
+.owl-carousel img {
+  max-width: 90%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 300px solid #BE9CCD; 
+    border-radius: 50%;
+    font-size: 20px;
+    width: 50px;  
+    height: 50px;  
+    color: #FDE5E7;  
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.owl-nav button.owl-prev {
+    left: 10px;
+    color: #FDE5E7; 
+    border:  3px solid #BE9CCD;
+}
+
+.owl-nav button.owl-next {
+    right: 10px;  
+    color: #FDE5E7;
+    border:  3px solid #BE9CCD;
+}
+
+.owl-nav button:hover {
+   
+    color: #FDE5E7;
+    border:  3px solid #BE9CCD;  
+}
+
+.owl-nav button:focus {
+  
+    border:  3px solid #BE9CCD;
+    color: #FFE9eC;
+}
+
+
+.gallery-section {
+  width: 100%;
+  background-color: #DAAACF;
+  padding: 60px 0;
+  text-align: center;
+  font-family: 'Give You Glory', sans-serif;
+}
+
+.gallery-section h2 {
+  font-size: 60px;
+  color: #FDE5E7;
+  margin-bottom: 20px;
+}
+
+.gallery-section p {
+  font-size: 20px;
+  color: #FDE5E7;
+  margin-bottom: 40px;
+}
+
+.owl-carousel .gallery-item img {
+  width: 80px;
+  height: 100px;
+  border: 5px solid #FDE5E7;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+
+.attending-section {
+text-align : center;
+margin-top : 50px;
+}
+.attending-section h3 {
+font-size : 2rem;
+color : #FDE5E7;
+margin-bottom : 20px;
+}
+.attending-box {
+width : 60%;
+max-width : 300px;
+height : 40px;
+background-color : #FDE5E7;
+display : flex;
+justify-content : center;
+align-items : center;
+margin : 10px auto;
+border-radius : 30px;
+border : #E1AFD1 solid 5px;
+font-family : 'Give You Glory', sans-serif;
+font-size : 1rem;
+font-weight : 400;
+color : #E1AFD1;
+padding : 0 15px;
+}
+.attending-text {
+position : relative;
+top: 250px;
+font-family : 'Give You Glory', sans-serif;
+font-size : 2.5rem;
+font-weight : 400;
+line-height : 1.4;
+text-align : center;
+color : #7469B6;
+}
+
+.response-box {
+background-color : #D9D9D9;
+font-family : 'Give You Glory', sans-serif;
+font-size : 1rem;
+text-align : center;
+line-height : 40px;
+position : relative;
+margin-top: 140px;
+margin-left: 80px;
+border-radius : 30px;
+cursor : pointer;
+color : #7469B6;
+}
+
+.attending-texts{
+  position: relative;
+  top: 60px;
+  font-family : 'Give You Glory', sans-serif;
+font-size : 2.5rem;
+font-weight : 400;
+line-height : 1.4;
+text-align : center;
+color : #7469B6;
+}
+
+.response-boxes{
+  background-color : #D9D9D9;
+font-family : 'Give You Glory', sans-serif;
+font-size : 1rem;
+text-align : center;
+line-height : 40px;
+position : relative;
+top: 70px;
+left: 70px;
+padding: 10px 20px;
+margin-bottom: 100px;
+border-radius: 30px;
+cursor: pointer;
+color: #7469B6; 
+}
+
+.top-right-img, .top-right-img1, .bottom-left-img {
+width : 100%;
+height : auto;
+}
+.top-right-img {
+width : 200%;
+height : auto;
+display : flex;
+justify-content : flex-end;
+align-items : flex-start;
+position : absolute;    
+left: -550px;
+margin-top: -250px;
+max-width : 500px;
+}
+.top-right-img1 {
+width : 100%;
+height : auto;
+position : absolute;
+margin-top: -270px;
+left: -500px;
+max-width : 500px;
+}
+.bottom-left-img {
+position : absolute;
+top: 250px;
+bottom : 250px;
+left: 500px;
+max-width : 500px;
+}
+
+@media (max-width: 768px) {
+  .owl-carousel img {
+  max-width: 70%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+}
+
+@media (max-width: 768px) {
+            .attending-box {
+                width: 100%; 
+                max-width: 300px;
+            }
+
+            .attending-text {
+                top: 125px; 
+                font-size: 2rem;
+            }
+
+            .attending-texts{
+              top: -100px;
+            }
+
+            .response-boxes{
+              margin-top: -70px;
+            }
+            .response-box {
+                margin-top: -90px;
+                font-size: 0.9rem;
+                left: 20px;
+            }
+
+            .top-right-img, .top-right-img1, .bottom-left-img {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .top-right-img {
+                margin-left: 20px;
+                margin-top: -300px;
+            }
+
+            .top-right-img1 {
+                margin-top: -37+0px; 
+                left: -200px;
+                top: 100px; 
+            }
+
+            .bottom-left-img {
+                left: 0; 
+                max-width: 400px;
+                margin-left: -29px;
+            }
+            .response-box {
+                width: 60%;
+                max-width: 150px;
+                top: 250px;
+                margin-left: 15%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            
+            .attending-box {
+                width: 60%;
+                max-width: 300px;
+            }
+
+            .attending-text {
+                font-size: 2.5rem;
+            }
+
+            .response-box {
+                width: 60%;
+                max-width: 150px;
+                top: 150px;
+            }
+        }
+
+.our-story {
+  width: 100%;
+  max-width: 100%;
+  height: 1000px;
+  background-color: #E1AFD1;
+  color: white;
+  font-family: 'Give You Glory', sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  padding: 100px -400px;
+  margin-top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0;
+  cursor: pointer;
+  color: #FDE5E7;
+}
+
+.our-story h2 {
+  font-size: 40px;
+  color: #FDE5E7;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.story-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  justify-content: space-between;
+}
+
+.story-item.left {
+  flex-direction: row;
+}
+
+.story-item.right {
+  flex-direction: row;
+}
+
+.story-box {
+  width: 400px;
+  height: 120px;
+  margin-top: 50px;
+  background-color: #fff;
+  border: solid 2px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.story-box p {
+  margin: 0;
+  font-size: 18px;
+  color: #Fff;
+}
+
+.story-box-1,
+.story-box-2,
+.story-box-3 {
+  background-color: #e0bfd6;
+}
+
+.story-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: #ccc solid 2px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+  margin: 0 15px;
+}
+
+.story-image-1 {
+  order: -1;
+  border-color: #ccc;
+}
+
+.story-image-2 {
+  border-color: #ccc;
+  margin-left: 10px;
+}
+
+.story-image-3 {
+  border-color: #ccc;
+  margin-right: 10px;
+}
+
+.story-top-right-img {
+  width: 200%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  max-width: 500px;
+}
+
+.story-top-right-img1 {
+  height: auto;
+  position: absolute;
+  top: 970px;
+  right: 130px;
+  margin-left: 100px;
+}
+
+.story-bottom-left-img {
+  position: absolute;
+  top: 950px;
+  bottom: 250px;
+  right: -50px;
+  margin-left: -200px;
+}
+
+.story-bottom-left-img2 {
+  position: absolute;
+  top: 950px;
+  bottom: 250px;
+  max-width: 500px;
+  right: -40px;
+  margin-left: -120px;
+}
+
+@media (max-width: 768px) {
+  .our-story {
+    padding: 50px 20px;
+    font-size: 2.5rem;
+    height: auto;
+    margin-top: 540px;
+  }
+
+  .our-story h2 {
+    font-size: 28px;
+  }
+
+  .story-container {
+    gap: 20px;
+  }
+
+  .story-item {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .story-box {
+    width: 80%;
+    height: auto;
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .story-box p {
+    font-size: 16px;
+  }
+
+  .story-image {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  .story-top-right-img,
+  .story-top-right-img1,
+  
+  .story-bottom-left-img2 {
+    display:flex; 
+  }
+  .story-bottom-left-img{
+    display: none;
+  }
+
+  .story-top-right-img {
+  width: 200%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  top: 10px;
+  margin-left: -200px;
+  max-width: 200px;
+}
+
+.story-top-right-img1 {
+  height: auto;
+  position: absolute;
+  top: 620px;
+  right: 130px;
+  left: 97px;
+  max-width: 200px;
+}
+
+.story-bottom-left-img2 {
+  position: absolute;
+  top: 620px;
+  bottom: 250px;
+  max-width: 500px;
+  left: 290px;
+  max-width: 200px;
+}
+
+}
+
+@media (max-width: 480px) {
+  .our-story {
+    font-size: 2rem;
+  }
+
+  .our-story h2 {
+    font-size: 24px;
+  }
+
+  .story-item {
+    max-width: 100%;
+  }
+
+  .story-box {
+    width: 90%;
+  }
+
+  .story-box p {
+    font-size: 14px;
+  }
+
+  .story-image {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+.event {
+  text-align: center;
+  font-size: 4rem;
+  color: #7469B6;
+  top: 2000px;
+  margin-left: -450px;
+}
+
+#event-carousel {
+  padding: 60px 0;
+  width: 100%;
+  font-family: 'Give You Glory', sans-serif;
+  overflow: hidden;
+  background-color: #BE9CCD;
+  margin-top: 100px;
+  background-color :#FFE9eC;
+}
+
+#event-carousel .item {
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #AD88C6;
+  font-family: 'Give You Glory', sans-serif;
+  margin: 0px auto;
+  width: 100%;
+  margin-top: 100px;
+}
+
+#event-carousel .item img {
+  width: 65%;
+  height: 500px;
+  font-family: 'Give You Glory', sans-serif;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+#event-carousel .event-content {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Give You Glory', sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#event-carousel .event-content h3 {
+  font-size: 2rem;
+  color: #FFF;
+  font-family: 'Give You Glory', sans-serif;
+  margin-bottom: 10px;
+}
+
+#event-carousel .event-content p {
+  font-size: 1.2rem;
+  color: #FFF;
+  font-family: 'Give You Glory', sans-serif;
+  margin-bottom: 20px;
+}
+
+#event-carousel .date-rectangle {
+    background-color: #FDE5E7;
+    color: #7469B6;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin: 10px auto;
+    display: inline-block;
+    position: relative; 
+}
+
+.event {
+    text-align: center;
+    font-size: 3rem;
+    color: #7469B6;
+    margin: 0 auto;
+}
+
+#event-carousel {
+    padding: 40px 20px;
+    width: 100%;
+    font-family: 'Give You Glory', sans-serif;
+    background-color: #FFE9EC;
+    overflow: hidden;
+}
+
+#event-carousel .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #AD88C6;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+#event-carousel .item img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+
+#event-carousel .event-content {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+#event-carousel .event-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#event-carousel .event-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#event-carousel .date-rectangle {
+    background-color: #FDE5E7;
+    color: #7469B6;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin: 10px auto;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .event {
+        font-size: 2.5rem;
+    }
+
+    #event-carousel .item {
+        width: 100%;
+    }
+
+    #event-carousel .item img {
+        max-height: 200px;
+    }
+
+    #event-carousel .event-content {
+        padding: 15px;
+    }
+
+    #event-carousel .event-content h3 {
+        font-size: 1.5rem;
+    }
+
+    #event-carousel .event-content p {
+        font-size: 0.9rem;
+    }
+
+    #event-carousel .date-rectangle {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .event {
+        font-size: 2rem;
+    }
+
+    #event-carousel .event-content h3 {
+        font-size: 1.2rem;
+    }
+
+    #event-carousel .event-content p {
+        font-size: 0.8rem;
+    }
+
+    #event-carousel .date-rectangle {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+.attending-section h3 {
+font-size : 1.5rem;
+}
+.attending-box {
+width : 80%;
+max-width : 250px;
+}
+.attending-text {
+font-size : 2rem;
+}
+.response-box {
+width : 80%;
+max-width : 130px;
+}
+.top-right-img{
+max-width : 80%;
+position: relative;
+left: 00px;
+
+}
+.top-right-img1{
+  position: relative;
+    left: -100px;
+}
+.bottom-left-img{
+
+    left: 40px;
+}
+}
+@media screen and (min-width: 769px) {
+.attending-section h3 {
+font-size : 2.5rem;
+}
+.attending-box {
+width : 60%;
+max-width : 300px;
+}
+.attending-text {
+font-size : 2.5rem;
+}
+.response-box {
+width : 50%;
+max-width : 150px;
+}
+.top-right-img, .top-right-img1, .bottom-left-img {
+max-width : 500px;
+}
+}
+
+@media (max-width: 768px) {
+.rectangle {
+font-size : 18px;
+padding : 10px 0;
+}
+.text-box {
+font-size : 36px;
+width : 90%;
+}
+.image-box {
+max-width : 120px;
+}
+.save-date-box {
+width : 180px;
+font-size : 18px;
+}
+.october-box h1 {
+font-size : 30px;
+}
+.october-box p {
+font-size : 20px;
+}
+.october-box img {
+width : 200px;
+}
+}
+@media (max-width: 480px) {
+.rectangle {
+font-size : 16px;
+width: 100%;
+}
+.text-box {
+font-size : 28px;
+width : 85%;
+}
+.image-box {
+max-width : 200px;
+}
+.save-date-box {
+width : 160px;
+font-size : 16px;
+}
+.october-box h1 {
+font-size : 24px;
+}
+.october-box p {
+font-size : 18px;
+}
+.october-box img {
+width : 150px;
+}
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 300px; 
+  border-radius: 30px;
+  font-family : 'Give You Glory', sans-serif;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  background-color: #e6cfea;
+  border-radius: 30px;
+  padding: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family : 'Give You Glory', sans-serif;
+  position: relative;
+}
+
+/* Base Styles */
+.info-box-venue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  padding: 50px;
+  gap: 30px;
+  font-family: 'Give You Glory', sans-serif;
+}
+
+.info-image-venue {
+  width: 40%;
+  text-align: center;
+}
+
+.info-image-venue img {
+  width: 75%;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-text {
+  width: 60%;
+  text-align: left;
+  color: #AD88C6;
+}
+
+.info-text h3 {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #AD88C6;
+}
+
+.info-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  max-width: 550px;
+  color: #AD88C6;
+}
+
+.custom-btn,
+.location {
+  padding: 10px 20px;
+  background-color: #AD88C6;
+  border: none;
+  font-size: 10px;
+  color: #FDE5E7;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .info-box-venue {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .info-image-venue {
+    width: 100%;
+  }
+
+  .info-image-venue img {
+    margin-left: 15px;
+    width: 80%;
+  }
+
+  .info-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-text h3 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .info-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .custom-btn,
+  .location {
+    padding: 8px 16px;
+  }
+}
+
+.info-box-accommodation,
+.info-box-travel{
+  background-color: #D9D9D9;
+  font-family : 'Give You Glory', sans-serif;
+  color: #AD88C6;
+  font-size: 32px;
+  border-radius: 30px;
+  padding-left: 180px;
+}
+
+.info-box-accommodation p{
+font-family : 'Give You Glory', sans-serif;
+color: #AD88C6;
+max-width: 750px; 
+font-size: 24px;
+}
+
+.info-box-travel p{
+    color: #AD88C6;
+    font-family : 'Give You Glory', sans-serif;
+    max-width: 750px; 
+    font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+  .info-container {
+    margin-top: 100px; 
+  }
+
+  .info-box-accommodation,
+.info-box-travel{
+  padding-left: 60px;
+}
+
+ 
+.scroll-up-text {
+  width: 50%;
+  max-width: 150px;
+  height: 40px;
+  background-color: #D9D9D9;
+  color: #AD88C6;
+  font-family: 'Give You Glory', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  top: -50px;
+  margin-left: 20%;
+  transform: translateX(-50%);
+}
+
+.scroll-up-text p {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #AD88C6;
+}
+
+.excited-text {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #AD88C6;
+  font-family : 'Give You Glory', sans-serif;
+}
+
+.excited-img {
+  width: 200%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  top: 170px;
+  left: -150px;
+  max-width: 500px;
+  margin-top: 6200px;
+}
+
+.excited-img2 {
+  position: absolute;
+  top: 1800px;
+  bottom: 250px;
+  right: -50px;
+  margin-left: -200px;
+  margin-top: 4950px;
+}
+
+.excited-img3 {
+  position: absolute;
+  top: 1950px;
+  bottom: 250px;
+  max-width: 500px;
+  right: -170px;
+  margin-left: -200px;
+  margin-top: 4900px;
+}
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 500px;
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+  .scroll-up-text {
+    width: 90%;
+    max-width: 150px;
+    font-size: 10px;
+    margin-top: 300px;
+    left: 50px;
+  }
+
+  .excited-text {
+    font-size: 30px;
+    margin-top: -150px;
+    margin-left: 5%;
+  }
+
+  .excited-img {
+    width: 50%;
+    left: -50px;
+    top: 300px;
+  }
+
+  .excited-img2 {
+    width: 50%;
+    top: 1900px;
+    right: 1px;
+  }
+
+  .excited-img3 {
+    width: 50%;
+    top: 1900px;
+    right: 70px;
+  }
+
+  .gap {
+    margin-top: 300px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="rectangle" id="top">
+        October 18
+    </div>
+    <div class="text-box">
+        Kavya & Rohan
+    </div>
+    <div class="image-box">
+        <img src="https://s3-alpha-sig.figma.com/img/e061/538f/2558f4d372ebc2040f660fad0f38730f?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fKCWSNLL75riV-1wCPUKKUFcUjAI-I5R6TsNwn-3kW-uYuercdaXf8K6V-OHgKtNVJn9dBTXsfVbGQgySn0I7mQMOh82MMWEoJms2gVmYV3vCKNg~QdNFANy1s9-SieTZswC-6ggVwbuKoIERQl3GhboNdwVsqgAOsaXw-uHiB3DhAwaZqzwFGMiOdSHbVx2CA8ol7I4kEAFLnhScN~J4aU9p5y8AzhbRBnBookdc52hxST68dP19LYeh5b4VzALtRa13KJoUyi2MlkEXdYfy404hV9yi7xJK9-~FiisBoWdLmeOh5xUqxj85gslER21SwQcWgEp7sGBvG-6JzpbGA__" alt="October 18">
+    </div>
+    <div class="save-date-box">
+        Save the Date
+    </div>
+    <div class="october-box">
+        <h1>October 18</h1>
+        <p>We are getting married...</p>
+        <img src="https://s3-alpha-sig.figma.com/img/1961/52bb/d74f5fdcb904fe002c209f0beea5da31?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UZEE46ml6FgpSz7pt7c0pFFVCtLcQAGfonHkjF-NrFZNLjgDRs5P7cO1wEWpoLKLK-4PoPizn2EDXloQQK8GH-l59hZnumcHTNIRCPIyGEZSGXObFV~pOINoeiRWgDrhP-vMOvg2aMKnmj5cvLv836djRfuinQpPZZ3ufvvURs658zEjOMzGCzKdBh7qR4gBAX7VJp~QUMvAq05V1t8fULAQU~vTVk~33jvM6s~TaLiQYPYTI6r20ouvEPlLXDd6DrFPZ227S8HV0LRN5dclA-lA8TC~bMmCXZ4VvKJKPtBZHegEzmjdaTUyMcVLQecGU4bv0hbNW4qMCGrGVmbObw__" alt="October 18">
+        <div class="meet-bride-groom">      <p>Meet Bride & Groom</p></div>
+    </div>
+    <div class="container my-5 px-4 py-2">
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="card h-100">
+            <img src="https://i.pinimg.com/736x/f5/e4/bd/f5e4bddf70b886fd33536bd9825c49f1.jpg" class="card-img-top" alt="Image 1">
+            <div class="card-body">
+              <h5 class="card-title">Kavya</h5>
+              <p class="card-text">since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
+            </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card h-100">
+            <img src="https://i.pinimg.com/736x/c4/2d/17/c42d1739f68083bcf9bc876f84867b9f.jpg" class="card-img-top" alt="Image 2">
+            <div class="card-body">
+              <h5 class="card-title">Rohan</h5>
+              <p class="card-text">since the 1500s, when an unknown printer took a galley of type and scrambled it to </p>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="gallery-section">
+        <h2>gallery</h2>
+        <p>Relive our beautiful moments</p>
+        <div style="display: flex; justify-content: center;">
+          <div style="background-color: #FDE5E7; width: 150px; height: 30px; border: 1px solid #BE9CCD; border-radius: 50px;">
+            <p style="position: relative; top: 3px; color: #BE9CCD;">see more</p>
+          </div>
+        </div>
+        <div class="owl-carousel" style=" margin-top: 20px;">
+            <div class="item"><img src="https://i.pinimg.com/736x/4f/7b/ed/4f7bedc82e03ef62b39c370e40ba5a97.jpg" alt="Gallery Image 1" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+            <div class="item"><img src="https://i.pinimg.com/736x/7d/2d/12/7d2d12169b96ab6901b90e871c07cbcf.jpg" alt="Gallery Image 2" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+            <div class="item"><img src="https://i.pinimg.com/736x/c7/bd/a4/c7bda44d487f9e127e1e5b0902e7ceb0.jpg" alt="Gallery Image 3" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+            <div class="item"><img src="https://i.pinimg.com/736x/e1/88/3d/e1883d7c75ed580edda2a01c48576fe3.jpg" alt="Gallery Image 1" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+            <div class="item"><img src="https://i.pinimg.com/736x/fe/98/55/fe98556b7376bbc739321a1e9f8e4973.jpg" alt="Gallery Image 2" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+            <div class="item"><img src="https://i.pinimg.com/736x/8a/cf/34/8acf3400c10373cd0b100cfbf48601a7.jpg" alt="Gallery Image 3" style="background-color: #FDE5E7; padding: 10px; border-radius: 50px;"></div>
+        </div>
+    </section>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="script.js"></script>
+    </div>
+
+    <div class="attending">
+      <h2 class="attending-text">Are you attending?</h2>
+      <div class="response-box">Yes I am attending</div>
+    </div>
+
+  <div class="our-story">
+        <h2>Our Story</h2>
+        <div class="story-container">
+            <div class="story-item left">
+                <img src="https://i.pinimg.com/736x/8b/75/6d/8b756d7cfcc52157b5b30a86b000ad70.jpg" alt="How We Met" class="story-image story-image-1">
+                <div class="story-box story-box-1">
+                    <p>How We Met</p>
+                    <p>A chance meeting that started it all.</p>
+
+                </div>
+            </div>
+            <div class="story-item right">
+                <div class="story-box story-box-2">
+                    <p>Our First Date</p>
+                    <p>                    An evening full of memories and laughter.</p>
+                </div>
+                <img src="https://i.pinimg.com/736x/78/60/c3/7860c3a49bfc862823a1ccf005b59b2e.jpg" alt="Our First Date" class="story-image story-image-2">
+            </div>
+            <div class="story-item left">
+                <img src="https://i.pinimg.com/736x/a7/5a/a9/a75aa9f67d43cf2adfec10f74a30b93b.jpg" alt="Our Marriage" class="story-image story-image-3">
+                <div class="story-box story-box-3">
+                    <p>Our Marriage</p>
+                    <p>The beginning of forever together.</p>
+                    <!-- <img src="https://s3-alpha-sig.figma.com/img/98e5/112c/d1ec6e459f9247d47d395783d6d270d2?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EAsae9J4YclOaLLMCeJE2KVoaMOtxbe9eIZVaMlxlfnSMlRQCuOng5mgIZrXrPBhI5hpFc9zm5MNDni1gMJONvolbWHL4Bqx6SmOW7ILRMTt4Glxtchz6eUFgDc3NYuIZ0CiYfdq3hs609foqAecKJAKC3X7VZI9R60ZC4O3H~BGp38HdQh9y4hCD7MRJnut5moVm4UWVHLbTvRA8YGa1e-osf572iVN200CTfQV2hkX4uUdQO3-d0n7FMbYDKhf51u7OxJ0cz2VXb2FsvSjbZiKwCwolGFH9aWq6Gl7arecoUD-GA02SuU3gNlmFH7eYqj1M1V3CR7mUaRBWZebsQ__" class="story-top-right-img" alt="Top Right Image">
+                    <img src="https://s3-alpha-sig.figma.com/img/98e5/112c/d1ec6e459f9247d47d395783d6d270d2?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EAsae9J4YclOaLLMCeJE2KVoaMOtxbe9eIZVaMlxlfnSMlRQCuOng5mgIZrXrPBhI5hpFc9zm5MNDni1gMJONvolbWHL4Bqx6SmOW7ILRMTt4Glxtchz6eUFgDc3NYuIZ0CiYfdq3hs609foqAecKJAKC3X7VZI9R60ZC4O3H~BGp38HdQh9y4hCD7MRJnut5moVm4UWVHLbTvRA8YGa1e-osf572iVN200CTfQV2hkX4uUdQO3-d0n7FMbYDKhf51u7OxJ0cz2VXb2FsvSjbZiKwCwolGFH9aWq6Gl7arecoUD-GA02SuU3gNlmFH7eYqj1M1V3CR7mUaRBWZebsQ__" class="story-top-right-img1" alt="Top Right Image">  
+                    <img src="https://s3-alpha-sig.figma.com/img/98e5/112c/d1ec6e459f9247d47d395783d6d270d2?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EAsae9J4YclOaLLMCeJE2KVoaMOtxbe9eIZVaMlxlfnSMlRQCuOng5mgIZrXrPBhI5hpFc9zm5MNDni1gMJONvolbWHL4Bqx6SmOW7ILRMTt4Glxtchz6eUFgDc3NYuIZ0CiYfdq3hs609foqAecKJAKC3X7VZI9R60ZC4O3H~BGp38HdQh9y4hCD7MRJnut5moVm4UWVHLbTvRA8YGa1e-osf572iVN200CTfQV2hkX4uUdQO3-d0n7FMbYDKhf51u7OxJ0cz2VXb2FsvSjbZiKwCwolGFH9aWq6Gl7arecoUD-GA02SuU3gNlmFH7eYqj1M1V3CR7mUaRBWZebsQ__" class="story-bottom-left-img" alt="Bottom Left Image">
+                    <img src="https://s3-alpha-sig.figma.com/img/98e5/112c/d1ec6e459f9247d47d395783d6d270d2?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EAsae9J4YclOaLLMCeJE2KVoaMOtxbe9eIZVaMlxlfnSMlRQCuOng5mgIZrXrPBhI5hpFc9zm5MNDni1gMJONvolbWHL4Bqx6SmOW7ILRMTt4Glxtchz6eUFgDc3NYuIZ0CiYfdq3hs609foqAecKJAKC3X7VZI9R60ZC4O3H~BGp38HdQh9y4hCD7MRJnut5moVm4UWVHLbTvRA8YGa1e-osf572iVN200CTfQV2hkX4uUdQO3-d0n7FMbYDKhf51u7OxJ0cz2VXb2FsvSjbZiKwCwolGFH9aWq6Gl7arecoUD-GA02SuU3gNlmFH7eYqj1M1V3CR7mUaRBWZebsQ__" class="story-bottom-left-img2" alt="Bottom Left Image"> -->
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <section id="event-carousel">
+      <h2 class="event">Events.</h2>
+      <div class="owl-carousel">
+          <div class="item haldi-box">
+              <img src="https://i.pinimg.com/736x/10/7c/3b/107c3b55e609d4648d23a57f78bf7323.jpg" alt="Haldi Event">
+              <div class="event-content">
+                  <h3>Haldi Ceremony</h3>
+                  <div class="date-rectangle">18th October</div>
+                  <p>Starts at 6.30pm<br />Ends at 8pm</p>
+                  <p>Location: Taj | Solai Colony,<br />Senayapuram Colony</p>
+              </div>
+          </div>
+          <div class="item mehandi-box">
+              <img src="https://i.pinimg.com/736x/86/d7/71/86d77168f885ebfcb209be8761ef6a65.jpg" alt="Mehandi Event">
+              <div class="event-content">
+                  <h3>Mehandi</h3>
+                  <div class="date-rectangle">19th October</div>
+                  <p>Starts at 6.30pm<br />Ends at 8pm</p>
+                  <p>Location: Taj | Solai Colony,<br />Senayapuram Colony</p>
+              </div>
+          </div>
+          <div class="item reception-box">
+              <img src="https://i.pinimg.com/736x/4d/64/40/4d644007c88555409123df4c572e4103.jpg" alt="Reception Event">
+              <div class="event-content">
+                  <h3>Reception</h3>
+                  <div class="date-rectangle">20th October</div>
+                  <p>Starts at 6.30pm<br />Ends at 8pm</p>
+                  <p>Location: Taj | Solai Colony,<br />Senayapuram Colony</p>
+              </div>
+          </div>
+      </div>
+  </section>  
+    <div class="info-container">
+            <div class="info-item">
+              <div class="info-box info-box-accommodation">
+                <h3>Accommodation</h3>
+                <p>publishing and graphic design, Lorem ipsum is a placeholder text commonly used publishing and graphic design, Lorem ipsum is a placeholder text commonly usedn publishing and graphic design, Lorem ipsum is a placeholder text commonly used</p>
+              </div>
+            </div>
+          
+            <div class="info-item">
+              <div class="info-box info-box-travel">
+                <h3>Travel</h3>
+                <p>Travel publishing and graphic design, Lorem ipsum is a placeholder text commonly used publishing and graphic design, Lorem ipsum is a placeholder text commonly usedn publishing and graphic design, Lorem ipsum is a placeholder text commonly used</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-box-venue">
+                <div class="info-image-venue">
+                  <img src="venue (2).png" alt="Venue Image">
+                  <button class="custom-btn">Taj Hotel, Gandhi Nagar, Chennai.</button>
+                </div>
+                <div class="info-text">
+                  <h3>Venue</h3>
+                  <p>Publishing and graphic design, Lorem ipsum is a placeholder text commonly used. Publishing and graphic design, Lorem ipsum is a placeholder text commonly used in publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+
+                </div>
+              </div>
+            </div>            
+          </div>
+      <div class="gap"></div>
+      <div class="attending" style="padding-bottom: 80px;">
+      <h2 class="attending-texts">We are excited</h2>
+      <a href="#top" style="text-decoration: none;" class="response-boxes">Scroll to top</a>
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script>
+          $(document).ready(function () {
+              // Initialize Owl Carousel for the gallery
+              $('.gallery-section .owl-carousel').owlCarousel({
+                  loop: true,
+                  margin: 10,
+                  autoplay: true,
+                  autoplayTimeout: 3000,
+                  autoplaySpeed: 1000,
+                  nav: true,
+                  responsive: {
+                      0: { items: 1 },
+                      600: { items: 2 },
+                      1000: { items: 3 }
+                  }
+              });
+  
+              // Initialize Owl Carousel for the events
+              $('#event-carousel .owl-carousel').owlCarousel({
+                  loop: true,
+                  margin: 20,
+                  
+                  autoplay: true,
+                  autoplayTimeout: 3000,
+                  autoplaySpeed: 1000,
+                  nav: true,
+                  responsive: {
+                      0: { items: 1 },
+                      600: { items: 1 },
+                      1000: { items: 1 }
+                  }
+              });
+          });
+      </script>
+        
+
+</body>
+</html>
